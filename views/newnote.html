@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap 4 Dashboard</title>
+    <meta name="description" content="A admin dashboard theme that will get you started with Bootstrap 4. The sidebar toggles off-canvas on smaller screens." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+
+
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body >
+    <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+    <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        ☰
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">Home</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#myAlert" data-toggle="collapse">Wow</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid" id="main">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/newnote">Create</a></li>
+                <li class="nav-item"><a class="nav-link" href="/discuss">Discuss</a></li>
+            </ul>
+        </div>
+        <!--/col-->
+
+        <div class="col-md-9 col-lg-10 main">
+
+            <!--toggle sidebar button-->
+            <p class="hidden-md-up">
+                <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Menu</button>
+            </p>
+
+            <h1 class="display-1 hidden-xs-down">
+            Standup note create form
+            </h1>
+            <p class="lead">Create note for today</p>
+          <br>
+          {% if message.length > 0 %}
+          <div class="alert alert-danger alert-error">
+            {{ message }}
+          </div>
+          {% endif %}
+          <br>
+
+          <form name="standupform" action="/newnote" method="post">
+            <fieldset class="form-group">
+              <label for="project">Member Select</label>
+              <select class="form-control" id="memberName" name="memberName">
+                <option value="None">Select member</option>
+                <option value="Lan">Lan</option>
+                <option value="Diep">Diep</option>
+                <option value="Tuan">Tuan</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="project">Project select</label>
+              <select class="form-control" id="project" name="project">
+                <option value="None">Select Project</option>
+                <option value="Super">Super</option>
+                <option value="Extreme">Extreme</option>
+                <option value="Absolute">Absolute</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="workYesterday">What did you do yesterday?</label>
+              <textarea class="form-control" id="workYesterday" rows="3" name="workYesterday"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="workToday">What will you do today?</label>
+              <textarea class="form-control" id="workToday" rows="3" name="workToday"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="impediment">What is your impediment?</label>
+              <textarea class="form-control" id="impediment" rows="3" name="impediment"></textarea>
+            </fieldset>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        </div>
+        <!--/main col-->
+    </div>
+
+</div>
+<!--/.container-->
+<footer class="container-fluid">
+    <p class="text-right small">©2015 Company</p>
+</footer>
+
+
+
+    <!--scripts loaded here-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
