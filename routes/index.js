@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function (req, res) {
-  return standupCtrl.filterByMember(req, res);
+  return standupCtrl.filter(req, res);
 })
 
 router.get('/newnote', function (req, res) {

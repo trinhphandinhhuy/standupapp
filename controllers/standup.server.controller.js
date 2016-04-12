@@ -36,14 +36,19 @@ exports.getNote = function (req, res) {
   res.render('newnote', {title : 'Standup - New note'});
 };
 
-exports.filterByMember = function (req, res) {
+exports.filter = function (req, res) {
   var query = Standup.find();
-  var filter = req.body.memberName;
+  var filterName = req.body.memberName;
+  var filterProject = req.body.project;
 
   query.sort({createdOn : 'desc'});
 
-  if(filter.length > 0){
-    query.where({memberName: filter});
+  if(filterName.length > 0){
+    query.where({memberName: filterName});
+  }
+
+  if(filterProject.length > 0){
+    query.where({project: filterProject});
   }
 
   query.exec(function (err, results) {

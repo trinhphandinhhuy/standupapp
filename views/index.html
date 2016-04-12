@@ -19,23 +19,8 @@
     <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
         ☰
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="collapse navbar-toggleable-xs" id="collapsingNavbar">
-        <ul class="nav navbar-nav pull-right">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">Home</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#features">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#myAlert" data-toggle="collapse">Wow</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">About</a>
-            </li>
-        </ul>
-    </div>
+    <a class="navbar-brand" href="#">Stameno - Stand-up Meeting Notes</a>
+
 </nav>
 <div class="container-fluid" id="main">
     <div class="row row-offcanvas row-offcanvas-left">
@@ -43,7 +28,7 @@
             <ul class="nav nav-pills nav-stacked">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/newnote">Create</a></li>
-                <li class="nav-item"><a class="nav-link" href="/discuss">Discuss</a></li>
+                <li class="nav-item"><a class="nav-link" href="/discuss">About</a></li>
             </ul>
         </div>
         <!--/col-->
@@ -54,16 +39,12 @@
             <p class="hidden-md-up">
                 <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Menu</button>
             </p>
-
-            <h1 class="display-1 hidden-xs-down">
-            Stand-up meeting Notes
-            </h1>
             <p class="lead">This is a list of notes in the database</p>
           <br>
           <!-- Filter member in team-->
-          <form class="" action="/" method="post">
+          <form class="container" action="/" method="post">
             <div class="row clearfix">
-              <div class="col-md-4 column">
+              <div class="col-md-4 col-sm-6 column">
                 <select class="form-control" name="memberName">
                   <option value="">Show all members</option>
                   <option value="Lan">Lan</option>
@@ -71,10 +52,18 @@
                   <option value="Tuan">Tuan</option>
                 </select>
               </div>
+              <div class="col-md-4 col-sm-6 column">
+                <select class="form-control" id="project" name="project">
+                  <option value="">Show all projects</option>
+                  <option value="Super">Super</option>
+                  <option value="Extreme">Extreme</option>
+                  <option value="Absolute">Absolute</option>
+                </select>
+              </div>
               <button type="submit" name="buttonFilter" class="btn btn-primary">Filter</button>
             </div>
           </form>
-
+          <br>
           <div class="list-group column" >
             {% for note in notes %}
             <div class="list-group-item">
@@ -92,10 +81,6 @@
 
 </div>
 <!--/.container-->
-<footer class="container-fluid">
-    <p class="text-right small">©2015 Company</p>
-</footer>
-
 
 
     <!--scripts loaded here-->
