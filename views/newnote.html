@@ -56,35 +56,53 @@
             </p>
 
             <h1 class="display-1 hidden-xs-down">
-            Stand-up meeting Notes
+            Standup note create form
             </h1>
-            <p class="lead">This is a list of notes in the database</p>
+            <p class="lead">Create note for today</p>
           <br>
-          <!-- Filter member in team-->
-          <form class="" action="/" method="post">
-            <div class="row clearfix">
-              <div class="col-md-4 column">
-                <select class="form-control" name="memberName">
-                  <option value="">Show all members</option>
-                  <option value="Lan">Lan</option>
-                  <option value="Diep">Diep</option>
-                  <option value="Tuan">Tuan</option>
-                </select>
-              </div>
-              <button type="submit" name="buttonFilter" class="btn btn-primary">Filter</button>
-            </div>
-          </form>
-
-          <div class="list-group column" >
-            {% for note in notes %}
-            <div class="list-group-item">
-              <div>Note from {{ note.memberName}} on {{ note.createdOn.toDateString()}} - for the project: {{ note.project }}</div>
-              <div>Work Yesterday: {{ note.workYesterday}}</div>
-              <div>Work Today: {{ note.workToday }}</div>
-              <div>Impediment: {{ note.impediment }}</div>
-            </div>
-            {% endfor %}
+          {% if message.length > 0 %}
+          <div class="alert alert-danger alert-error">
+            {{ message }}
           </div>
+          {% endif %}
+          <br>
+
+          <form name="standupform" action="/newnote" method="post">
+            <fieldset class="form-group">
+              <label for="project">Member Select</label>
+              <select class="form-control" id="memberName" name="memberName">
+                <option value="None">Select member</option>
+                <option value="Lan">Lan</option>
+                <option value="Diep">Diep</option>
+                <option value="Tuan">Tuan</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="project">Project select</label>
+              <select class="form-control" id="project" name="project">
+                <option value="None">Select Project</option>
+                <option value="Super">Super</option>
+                <option value="Extreme">Extreme</option>
+                <option value="Absolute">Absolute</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="workYesterday">What did you do yesterday?</label>
+              <textarea class="form-control" id="workYesterday" rows="3" name="workYesterday"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="workToday">What will you do today?</label>
+              <textarea class="form-control" id="workToday" rows="3" name="workToday"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <label for="impediment">What is your impediment?</label>
+              <textarea class="form-control" id="impediment" rows="3" name="impediment"></textarea>
+            </fieldset>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
         </div>
         <!--/main col-->

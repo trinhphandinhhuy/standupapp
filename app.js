@@ -11,7 +11,7 @@ var users = require('./routes/users');
 //Mongoose ODM
 var mongoose = require('mongoose');
 //Connect to MongoDB Lab
-mongoose.connect('mongodb://huytrinh:lanvadiep1@@ds019480.mlab.com:19480/standupapp');
+mongoose.connect('mongodb://lan:lanvadiep@ds019480.mlab.com:19480/standupapp');
 var app = express();
 
 // view engine setup
@@ -22,6 +22,7 @@ app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(express.static('public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
