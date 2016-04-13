@@ -46,11 +46,44 @@ var standupSchema = new Schema({
   }
 });
 
-// disabled ID
-
-var noIdSchema = new Schema({
-  name: String},{
-  _id: false
+var userSchema = new Schema({
+  userName: {
+    type: String,
+    required: true,
+  },
+  project: [{
+    type: Schema.ObjectId,
+    ref : 'Projects',
+  }],
+  workYesterday: {
+    type: String,
+    required: true,
+  },
+  workToday: {
+    type: String,
+    required: true,
+  },
+  impediment: {
+    type: String,
+    required: true,
+    default: 'None'
+  },
+  createdOn: {
+    type : Date,
+    default: Date.now
+  }
 });
+
+var projectSchema = new Schema({
+  projectName: {
+    type: String,
+    required: true,
+  },
+  users: [{
+    type: Schema.ObjectId,
+    ref : 'Users',
+  }]
+});
+
 
 module.exports = mongoose.model('Standup', standupSchema);
