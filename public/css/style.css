@@ -45,13 +45,14 @@
 	box-shadow:
 		0 0 0 8px rgba(65,131,142,1),
 		0 1px 1px rgba(255,255,255,0.5);
-	background-repeat: no-repeat;
+	//background-repeat: no-repeat;
 	border-radius: 50%;
 	-webkit-transform: scale(0.8) translateX(24px);
 	-moz-transform: scale(0.8) translateX(24px);
 	-o-transform: scale(0.8) translateX(24px);
 	-ms-transform: scale(0.8) translateX(24px);
 	transform: scale(0.8) translateX(24px);
+	background-size: 100%;
 }
 
 .thumb:before {
@@ -77,37 +78,16 @@
 	bottom: -30px;
 }
 
-.user-1 {
-	background-image: url(../images/chewbacca.jpg);
+.Tuan {
+	background-image: url(../images/Tuan.jpg);
+}
+.Lan {
+	background-image: url(../images/Lan.jpg);
+}
+.Diep {
+	background-image: url(../images/Diep.jpg);
 }
 
-.user-2 {
-	background-image: url(../images/barf.jpg);
-}
-
-.user-3 {
-	background-image: url(../images/darkhelmet.jpg);
-}
-
-.user-4 {
-	background-image: url(../images/darthvader.jpg);
-}
-
-.user-5 {
-	background-image: url(../images/leia.jpg);
-}
-
-.user-6 {
-	background-image: url(../images/vespa.jpg);
-}
-
-.user-7 {
-	background-image: url(../images/c3po.jpg);
-}
-
-.user-8 {
-	background-image: url(../images/dotmatrix.jpg);
-}
 
 /* Transparent Checkbox/radio hack: leave the checkbox on top, hide it with opacity 0 */
 

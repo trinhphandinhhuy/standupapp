@@ -28,8 +28,8 @@
 			<div class="menu-wrap">
 				<nav class="menu">
 					<div class="icon-list">
-						<a href="/"><i class="fa fa-fw fa-star-o"></i><span>Home</span></a>
-						<a href="/newnote"><i class="fa fa-fw fa-bell-o"></i><span>Create</span></a>
+						<a href="/"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+						<a href="/newnote"><i class="fa fa-fw fa-pencil"></i><span>Create</span></a>
 						<a href="/about"><i class="fa fa-fw fa-envelope-o"></i><span>About</span></a>
 					</div>
 				</nav>
@@ -83,9 +83,9 @@
           <ul class="timeline">
             {% for note in notes %}
             <li class="event">
-  						<input type="radio" name="tl-group" checked/>
+  						<input type="radio" name="tl-group" {% if loop.first %} checked {% endif %}/>
   						<label></label>
-  						<div class="thumb user-4"><span>{{note.memberName}}</span></div>
+  						<div class="thumb {{ note.memberName }}"><span>{{note.memberName}}</span></div>
   						<div class="content-perspective">
                 <div class="content">
                   <div class="content-inner">
@@ -96,9 +96,9 @@
                       <div>Work Today: {{ note.workToday }}</div>
                       <div>Impediment: {{ note.impediment }}</div>
                     -->
-                  Work Yesterday: {{ note.workYesterday}} <br>
-                  Work Today: {{ note.workToday }} <br>
-                  Impediment: {{ note.impediment }}
+                  <b>Work Yesterday:</b> {{ note.workYesterday}} <br>
+                  <b>Work Today:</b> {{ note.workToday }} <br>
+                  <b>Impediment:</b> {{ note.impediment }}
                     </p>
 
   								</div>
