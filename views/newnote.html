@@ -1,101 +1,101 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bootstrap 4 Dashboard</title>
-    <meta name="description" content="A admin dashboard theme that will get you started with Bootstrap 4. The sidebar toggles off-canvas on smaller screens." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Codeply">
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Stameno</title>
+		<meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/menu_elastic.css" />
+    <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="css/cs-skin-elastic.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<script src="js/snap.svg-min.js"></script>
+    <script src="js/modernizr.custom.63321.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="/"><i class="fa fa-fw fa-star-o"></i><span>Home</span></a>
+						<a href="/newnote"><i class="fa fa-fw fa-bell-o"></i><span>Create</span></a>
+						<a href="/about"><i class="fa fa-fw fa-envelope-o"></i><span>About</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
+					</svg>
+				</div>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap">
+				<div class="content">
+					<header class="codrops-header">
+						<h1>Stameno <span>Stand-up Meeting Notes</span></h1>
+						<nav class="codrops-demos">
+              <section>
+                <form name="standupform" action="/newnote" method="post">
+                  <fieldset class="form-group">
+                    <select class="cs-select cs-skin-elastic" id="memberName" name="memberName">
+                      <option value="None">Select member</option>
+                      <option value="Lan">Lan</option>
+                      <option value="Diep">Diep</option>
+                      <option value="Tuan">Tuan</option>
+                    </select>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <select class="cs-select cs-skin-elastic" id="project" name="project">
+                      <option value="None">Select Project</option>
+                      <option value="Super">Super</option>
+                      <option value="Extreme">Extreme</option>
+                      <option value="Absolute">Absolute</option>
+                    </select>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <textarea class="form-control" id="workYesterday" rows="3" name="workYesterday" placeholder="What did you do yesterday?"></textarea>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <textarea class="form-control" id="workToday" rows="3" name="workToday" placeholder="What will you do today?"></textarea>
+                  </fieldset>
+                  <fieldset class="form-group">
+                    <textarea class="form-control" id="impediment" rows="3" name="impediment" placeholder="Is there any difficulties?"></textarea>
+                  </fieldset>
+                <br>
+                <button type="submit" class="button button--wayra button--border-thick button--text-upper button--size-s">Submit</button>
+                </form>
+        			</section>
 
 
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body >
-    <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Stameno</a>
-
-</nav>
-<div class="container-fluid" id="main">
-    <div class="row row-offcanvas row-offcanvas-left">
-        <div class="col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/newnote">Create</a></li>
-                <li class="nav-item"><a class="nav-link" href="/discuss">Discuss</a></li>
-            </ul>
-        </div>
-        <!--/col-->
-
-        <div class="col-md-9 col-lg-10 main">
-
-            <!--toggle sidebar button-->
-            <p class="hidden-md-up">
-                <button type="button" class="btn btn-primary-outline btn-sm" data-toggle="offcanvas"><i class="fa fa-chevron-left"></i> Menu</button>
-            </p>
-
-            <p class="lead">Create note for today</p>
-          <br>
-          {% if message.length > 0 %}
-          <div class="alert alert-danger alert-error">
-            {{ message }}
-          </div>
-          {% endif %}
-          <br>
-
-          <form name="standupform" action="/newnote" method="post">
-            <fieldset class="form-group">
-              <label for="project">Member Select</label>
-              <select class="form-control" id="memberName" name="memberName">
-                <option value="None">Select member</option>
-                <option value="Lan">Lan</option>
-                <option value="Diep">Diep</option>
-                <option value="Tuan">Tuan</option>
-              </select>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <label for="project">Project select</label>
-              <select class="form-control" id="project" name="project">
-                <option value="None">Select Project</option>
-                <option value="Super">Super</option>
-                <option value="Extreme">Extreme</option>
-                <option value="Absolute">Absolute</option>
-              </select>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <label for="workYesterday">What did you do yesterday?</label>
-              <textarea class="form-control" id="workYesterday" rows="3" name="workYesterday"></textarea>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="workToday">What will you do today?</label>
-              <textarea class="form-control" id="workToday" rows="3" name="workToday"></textarea>
-            </fieldset>
-            <fieldset class="form-group">
-              <label for="impediment">What is your impediment?</label>
-              <textarea class="form-control" id="impediment" rows="3" name="impediment"></textarea>
-            </fieldset>
-
-<button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-        </div>
-        <!--/main col-->
-    </div>
-
-</div>
-<!--/.container-->
-
-    <!--scripts loaded here-->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-
-    <script src="js/scripts.js"></script>
-  </body>
+						</nav>
+					</header>
+					<!-- Related demos -->
+				</div>
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/main3.js"></script>
+    <script src="js/selectFx.js"></script>
+    <script>
+      (function() {
+        [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+          new SelectFx(el);
+        } );
+      })();
+    </script>
+	</body>
 </html>
